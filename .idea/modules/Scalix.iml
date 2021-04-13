@@ -16,6 +16,6 @@
     <orderEntry type="library" name="sbt: org.json4s:json4s-core_2.13:3.6.11:jar" level="project" />
     <orderEntry type="library" name="sbt: org.json4s:json4s-native_2.13:3.6.11:jar" level="project" />
     <orderEntry type="library" name="sbt: org.json4s:json4s-scalap_2.13:3.6.11:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.scala-lang:scala-library:2.13.5:jar" level="project" />
+    <orderEntry type="library" name="scala-sdk-2.13.5" level="project" />
   </component>
 </module>

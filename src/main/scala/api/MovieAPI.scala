@@ -7,11 +7,16 @@ import model.{Actor, FullName, PaginatedResponse}
 import java.net.URLEncoder
 import scala.io.Source
 
-class MovieAPI extends App {
+object MovieAPI extends App {
   implicit val formats: Formats = DefaultFormats
 
+  findActorId("Jason", "Statham") match {
+    case Some(value) => println(value)
+    case None => println("erreur")
+  }
+
   private def buildUrl(route: String, query: String): String = {
-    s"https://api.themoviedb.org/3/$route?api_key=2365f8c762228458874eeb1836406ae4&query=$query"
+    s"https://api.themoviedb.org/3$route?api_key=2365f8c762228458874eeb1836406ae4&query=$query"
   }
 
   def findActorId(name: String, surname: String): Option[Int] = {
