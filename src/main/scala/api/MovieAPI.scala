@@ -33,9 +33,8 @@ object MovieAPI extends App {
   def findMovieDirector(id: Int): Option[(Int, String)] = {
     val response = Source.fromURL(buildUrl(s"/movie/$id/credits", ""))
     val movieResponse = parse(response.mkString).camelizeKeys.extract[FindMovieDirectorResponse]
-    val director = movieResponse.crew.find(_.job == "Director")
 
-    Option.apply(director.map(_.id).get, director.map(_.name).get)
+    movieResponse.crew.find(_.job == "Director").map(director => (director.id, director.name))
   }
 
 }
